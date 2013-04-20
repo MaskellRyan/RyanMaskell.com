@@ -46,7 +46,9 @@ $base-line-height					: 8px;					// Baseline grid. Set to a sensible, small size
 $round-to-nearest-half-line			: false;  				// Round the line height to the nearest half line height. Off by default 
 
 $romance: 'romance_fatal_serif_stdRg', serif;
+$romance-bold: 'romance_fatal_serif_stdbold', serif;
 $sans: 'ubunturegular', sans-serif;
+$sans-bold: 'ubuntubold', sans-serif;
 
 // Functions for px to em conversions
 // ------------------------------------------------------------

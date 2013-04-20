@@ -152,25 +152,26 @@ really slow down your CSS. Don't overdue it.
   margin: 0 0 0 46%;
   width: 350px;
   color: white;
-  -webkit-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  -moz-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  -ms-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  -o-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  -box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
-  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -webkit-box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
+  -o-box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
+  -box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
+  box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
   background-color: rgba(255, 255, 255, 0.1);
 }
 #parallax-frame #greeting h1 {
   padding: 10px;
   padding-top: 40%;
   background-color: #cc2500;
-  background-image: -webkit-gradient(linear, left, right, from(rgba(204, 37, 0, 0.4)), to(#cc2500));
-  background-image: -webkit-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
-  background-image: -moz-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
-  background-image: -o-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
-  background-image: linear-gradient(to right, rgba(204, 37, 0, 0.4), #cc2500);
+  background-image: -webkit-gradient(linear, top, bottom, from(#991c00), to(#cc2500));
+  background-image: -webkit-linear-gradient(top, #991c00, #cc2500);
+  background-image: -moz-linear-gradient(top, #991c00, #cc2500);
+  background-image: -o-linear-gradient(top, #991c00, #cc2500);
+  background-image: linear-gradient(to bottom, #991c00, #cc2500);
   color: white;
   margin-bottom: 11px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
 #parallax-frame #greeting p {
   padding-left: 10px;
@@ -201,12 +202,90 @@ really slow down your CSS. Don't overdue it.
   text-align: center;
   text-transform: uppercase;
   font-size: 50px;
-  margin: 0 auto 50px;
-  width: 65%;
+  margin: 0 auto 15px;
+  width: 100%;
+  padding: 50px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+  background-color: #cc2500;
+  background-image: -webkit-gradient(linear, top, bottom, from(#991c00), to(#cc2500));
+  background-image: -webkit-linear-gradient(top, #991c00, #cc2500);
+  background-image: -moz-linear-gradient(top, #991c00, #cc2500);
+  background-image: -o-linear-gradient(top, #991c00, #cc2500);
+  background-image: linear-gradient(to bottom, #991c00, #cc2500);
 }
 
-#main {
-  height: 500px;
+h3.full-header {
+  font-size: 35px;
+  padding: 20px;
+  background-color: gray;
+  background-image: -webkit-gradient(linear, top, bottom, from(#4d4d4d), to(gray));
+  background-image: -webkit-linear-gradient(top, #4d4d4d, gray);
+  background-image: -moz-linear-gradient(top, #4d4d4d, gray);
+  background-image: -o-linear-gradient(top, #4d4d4d, gray);
+  background-image: linear-gradient(to bottom, #4d4d4d, #808080);
+}
+
+footer {
+  width: 100%;
+  position: relative;
+  height: 850px;
+  overflow: hidden;
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+footer:hover .bg-hover {
+  opacity: 1;
+}
+footer .wrap {
+  margin: 0 auto;
+}
+footer .bg-img {
+  z-index: -5;
+  width: 1600px;
+  height: 1200px;
+  max-width: none;
+  position: absolute;
+}
+footer .bg-hover {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  z-index: -2;
+  opacity: 0;
+}
+
+.row-fluid {
+  margin-bottom: 35px;
+}
+
+.media > .media-body {
+  overflow: visible;
+}
+
+.media > .pull-right {
+  margin-top: -18px;
+  margin-left: 20px;
+}
+
+.pull-right {
+  width: 100%;
+  clear: left;
+}
+@media (min-width: 40.625em) {
+  .pull-right {
+    clear: left;
+    max-width: 40%;
+  }
+}
+
+.wrap {
   width: 75%;
   margin: 50px auto;
 }
@@ -217,6 +296,7 @@ html {
 
 body {
   background-color: black;
+  background-image: url(../../assets/img/darkvert@2x.png);
   color: white;
   font-family: "ubunturegular", sans-serif;
 }
@@ -275,18 +355,26 @@ h1 {
   margin: 0 0 0.6666667em 0;
   font-family: "romance_fatal_serif_stdRg", serif;
   letter-spacing: 2px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 h2 {
   font-size: 1.875em;
   line-height: 1.3333333em;
   margin: 1.0666667em 0 0.5333333em 0;
+  font-family: "romance_fatal_serif_stdRg", serif;
+  color: #cc2500;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 0 rgba(255, 255, 255, 0.1);
 }
 
 h3 {
-  font-size: 1.375em;
-  line-height: 1.4545455em;
+  font-size: 1.5625em;
+  line-height: 1.28em;
   margin: 1.4545455em 0 0.7272727em 0;
+  font-family: "romance_fatal_serif_stdRg", serif;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 
 h4 {

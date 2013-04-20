@@ -15,17 +15,25 @@ h1 {
 	@include adjust-font-size-to(36px); 
 	margin: 0 0 rhythm(3, 36px) 0; 
 	font-family: $romance; 	
-	letter-spacing: 2px;					// 3 lines below, based on font size
+	letter-spacing: 2px;
+	text-shadow: 0 1px 0 transparentize($black, .8), 0 2px 0 transparentize($black, .8);					// 3 lines below, based on font size
 } 
 			
 h2 { 
 	@include adjust-font-size-to(30px); 
-	margin: rhythm(4, 30px) 0 rhythm(2, 30px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	margin: rhythm(4, 30px) 0 rhythm(2, 30px) 0;  	
+	font-family: $romance; 	
+	color: $secondary;
+	letter-spacing: 2px;
+	text-shadow: 0 1px 0 transparentize($white, .9), 0 2px 0 transparentize($white, .9);			// 4 lines above / 2 lines below, based on font size 
 }
 
 h3 { 
-	@include adjust-font-size-to(22px); 
-	margin: rhythm(4, 22px) 0 rhythm(2, 22px) 0;  			// 4 lines above / 2 lines below, based on font size 
+	@include adjust-font-size-to(25px); 
+	margin: rhythm(4, 22px) 0 rhythm(2, 22px) 0; 
+	font-family: $romance; 	
+	letter-spacing: 1px;
+	text-shadow: 0 1px 0 transparentize($black, .8);
 } 
 
 h4 { 
