@@ -1,0 +1,284 @@
+// Table of Contents
+
+// See mark-down file for how to use compass' rhythm and trailer/leader functions or check the compass documentation
+// -------------------------------------------------------------
+
+// ::Imports pre-render
+	//:: Reset
+	//:: Settings
+	//:: Mixins
+// ::Clearfix extends
+// ::Base styles
+
+// ::Layout styles 
+// ::Media queries 
+// ::State styles
+// ::Debugs  
+
+
+
+// ::Imports pre-render. Must be after reset 
+// ------------------------------------------------------------
+@import "compass/typography/vertical_rhythm";
+@import "compass/css3";
+@import "compass/utilities";
+
+@import "libs/reset";
+@import "libs/settings";
+@import "libs/mixins";
+
+
+
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+
+// CHOOSE YOUR CLEARFIX, OR YOU KNOW USE BOTH. WHATEVER, I'M NOT YOUR MOTHER
+
+// Use clearfix if you need general clearfixing
+.clearfix 			{ @include clearfix; }
+
+
+// Use pie-clearfix if you need clearfixing that doesn't use overflow: hidden
+.pie-clearfix 		{ @include pie-clearfix; }
+
+
+
+// OTHER EXTENDS
+
+// Max width, for images etc... in RWD
+.max-width 			{ max-width: 100%; height: auto; }
+
+
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+
+
+.paraimg {
+  position: absolute;
+}
+
+#seattle {
+	width: 110% !important;
+	min-width: 112% !important;
+	margin-left: -2%;
+	top: -10% !important;
+}
+
+#parallax-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  z-index: 1;
+  img {
+    height: auto;
+    min-width: auto;
+  }
+  #greeting {
+  	position: absolute;
+  	margin: 0 0 0 46%;
+  	width: 350px;
+  	//top: 20%;
+  	color: $white;
+  	@include box-shadow(inset 0 -3px 0 rgba(0,0,0,0.22));
+  	background-color: transparentize($white, .9);
+  	h1 {
+  		padding: 10px;
+  		padding-top: 40%;
+  		@include css-gradient(transparentize(#CC2500, .6),#CC2500);
+  		color: $white;
+  		margin-bottom: 11px;
+  	}
+  	p {
+  		padding-left: 10px;
+  	}
+  }
+}
+
+#landing {
+	height: 150px;
+	@include breakpoint(tablet) {
+		height: 350px;
+	}
+	@include breakpoint(desktop) {
+		height: 550px;
+	}
+	@include breakpoint(large-desktop) {
+		height: 800px;
+	}
+
+	overflow: hidden;
+	position: relative;
+}
+
+.full-header {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 50px;
+	margin: 0 auto 50px;
+	width: 65%;
+}
+
+#main {
+	//background-color: $black;
+	height: 500px;
+	//top: 750px;
+	//position: relative;
+	width: 75%;
+	margin: 50px auto;
+}
+
+html {
+	font-size: 100%;
+}
+
+body { 
+	background-color: $black;
+	//background-image: url(../../assets/img/responsive-guide.jpg);
+	color: $base-color;
+	font-family: $sans;
+}
+
+a {
+	color: $action;
+	@include force-wrap;					// force text links to wrap
+	&:hover, &:focus, &:active {
+		color: $action-respond
+	}
+}
+
+// Import base typography into the cascade (if required)
+@import "libs/typography"; 		
+
+
+// Import form styles into the cascade (if required)
+@import "libs/forms";			
+
+
+
+// -------------------------------------------------------------------------------------------------------
+
+// All the below can be removed if need be
+
+// -------------------------------------------------------------------------------------------------------
+
+
+
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+
+.container {
+	@extend .clearfix;
+	margin: 0 auto;
+	width: 95%;
+}
+
+/* Example styles - you'll most likey want to remove*/
+header {
+	@include padding-leader(4);
+	@include padding-trailer(2);
+	@include trailer(6);
+	background: #333;
+	h1 { color: #fff; }
+}
+
+section 				{ @extend .clearfix; }
+h1 						{ font-weight: 600; }
+ol 						{ @include ordered-inside }
+ul 						{ @include unordered-inside }
+
+
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+
+// If using gridset or another pre-defined grid, these should match up to the same breakpoints
+
+// Below examples use a mobile-first approach
+
+
+// Eg for 480px
+@media screen and (min-width: em-font(480px)) {
+	.container {
+		width: 95%;
+	}
+}
+
+
+// Eg for 800px
+@media screen and (min-width: em-font(800px)) {
+	.container {
+		min-width: em-font(780px);
+	}
+}
+
+// Eg for 1240px
+@media screen and (min-width: em-font(1240px)) {
+	.container {
+		max-width: em-font(1080px);
+	}
+}
+
+// Print styles
+@media print {
+	body {
+		// Smaller type for printing. Save a tree
+		font-size: percentage(10 / 16);
+		@include adjust-leading-to(2);
+	}
+}
+
+
+// IOS specifics 
+@media screen and (max-width: 769px) {  // Absolute measure here, as we're talking about devices, not screen size
+	-webkit-text-size-adjust:none; 		// Stop iPhone/iPad from scaling text
+}
+
+
+/* ::State styles */
+/* ------------------------------------------------------------ */
+
+.is-hidden {
+	display: none;
+}
+
+.is-shown, .is-block {
+	display: block;
+}
+
+.is-uppercase {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.is-lowercase {
+	text-transform: lowercase;
+}
+
+
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+
+#grid {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#grid div.horiz{
+	// Use this one NOT using a global border-box setting
+	// height: $base-line-height - 1px;
+	
+	// Use this one if you ARE using a global border-box setting
+    height: $base-line-height;
+    
+    // Carry on...
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+}

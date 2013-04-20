@@ -1,0 +1,527 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+button, input {
+  line-height: normal;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  *overflow: visible;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/*********************
+BORDER RADIUS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+/*********************
+TRANISTION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+BOX SHADOWS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/* ::Clearfixs and extends. Use which suits best */
+/* ----------------------------------------------------------- */
+.clearfix, .container, section {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.pie-clearfix {
+  *zoom: 1;
+}
+.pie-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.max-width {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ::Base styles Almost exclusively single element selectors */
+/* ------------------------------------------------------------ */
+.paraimg {
+  position: absolute;
+}
+
+#seattle {
+  width: 110% !important;
+  min-width: 112% !important;
+  margin-left: -2%;
+  top: -10% !important;
+}
+
+#parallax-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  z-index: 1;
+}
+#parallax-frame img {
+  height: auto;
+  min-width: auto;
+}
+#parallax-frame #greeting {
+  position: absolute;
+  margin: 0 0 0 46%;
+  width: 350px;
+  color: white;
+  -webkit-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -moz-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -ms-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -o-box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  -box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.22);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+#parallax-frame #greeting h1 {
+  padding: 10px;
+  padding-top: 40%;
+  background-color: #cc2500;
+  background-image: -webkit-gradient(linear, left, right, from(rgba(204, 37, 0, 0.4)), to(#cc2500));
+  background-image: -webkit-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
+  background-image: -moz-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
+  background-image: -o-linear-gradient(left, rgba(204, 37, 0, 0.4), #cc2500);
+  background-image: linear-gradient(to right, rgba(204, 37, 0, 0.4), #cc2500);
+  color: white;
+  margin-bottom: 11px;
+}
+#parallax-frame #greeting p {
+  padding-left: 10px;
+}
+
+#landing {
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+@media (min-width: 40.625em) {
+  #landing {
+    height: 350px;
+  }
+}
+@media (min-width: 60em) {
+  #landing {
+    height: 550px;
+  }
+}
+@media (min-width: 75em) {
+  #landing {
+    height: 800px;
+  }
+}
+
+.full-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin: 0 auto 50px;
+  width: 65%;
+}
+
+#main {
+  height: 500px;
+  width: 75%;
+  margin: 50px auto;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: "ubunturegular", sans-serif;
+}
+
+a {
+  color: white;
+  white-space: pre;
+  white-space: pre-wrap;
+  white-space: pre-line;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -hp-pre-wrap;
+  word-wrap: break-word;
+}
+a:hover, a:focus, a:active {
+  color: #cc2500;
+}
+
+/*********************
+BORDER RADIUS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include border-radius(4px 4px 0 0);
+*/
+/*********************
+TRANISTION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+BOX SHADOWS
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include box-shadow(inset 0 0 4px rgba(0,0,0,0.22));
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdue it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+h1 {
+  font-size: 2.25em;
+  line-height: 1.1111111em;
+  margin: 0 0 0.6666667em 0;
+  font-family: "romance_fatal_serif_stdRg", serif;
+  letter-spacing: 2px;
+}
+
+h2 {
+  font-size: 1.875em;
+  line-height: 1.3333333em;
+  margin: 1.0666667em 0 0.5333333em 0;
+}
+
+h3 {
+  font-size: 1.375em;
+  line-height: 1.4545455em;
+  margin: 1.4545455em 0 0.7272727em 0;
+}
+
+h4 {
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 0 0 0.4em 0;
+}
+
+h5 {
+  font-size: 1.125em;
+  line-height: 1.3333333em;
+  margin: 0 0 0.4444444em 0;
+}
+
+h6 {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 0.5em 0;
+}
+
+p, pre, label {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 1em 0;
+}
+
+ol, ul {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin: 0 0 2em 0;
+}
+
+li {
+  line-height: auto;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: disc;
+}
+
+ol {
+  list-style-position: outside;
+  list-style-type: decimal;
+}
+
+strong, b {
+  font-weight: 600;
+}
+
+em, i, q {
+  font-style: italic;
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 0.3125em solid grey;
+  line-height: normal;
+  margin: 0;
+}
+blockquote p {
+  font-style: italic;
+  margin: 0;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  margin: 1.2em 0 1.2em 0;
+}
+
+label, select {
+  display: block;
+}
+
+input[type="search"] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"] {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+  transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  *margin-top: 0;
+  line-height: normal;
+  cursor: pointer;
+}
+
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+select,
+input[type="file"] {
+  *margin-top: 4px;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+}
+
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+/* ::Layout styles - Layouts hold one or more modules together. */
+/* ------------------------------------------------------------ */
+.container {
+  margin: 0 auto;
+  width: 95%;
+}
+
+/* Example styles - you'll most likey want to remove*/
+header {
+  padding-top: 2em;
+  padding-bottom: 1em;
+  margin-bottom: 3em;
+  background: #333;
+}
+header h1 {
+  color: #fff;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+ol {
+  list-style-position: inside;
+  list-style-type: decimal;
+}
+
+ul {
+  list-style-position: inside;
+  list-style-type: disc;
+}
+
+/* ::Media queries */
+/* ------------------------------------------------------------ */
+@media screen and (min-width: 30em) {
+  .container {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 50em) {
+  .container {
+    min-width: 48.75em;
+  }
+}
+@media screen and (min-width: 77.5em) {
+  .container {
+    max-width: 67.5em;
+  }
+}
+@media print {
+  body {
+    font-size: 62.5%;
+    line-height: 1em;
+  }
+}
+@media screen and (max-width: 769px) {
+  -webkit-text-size-adjust: none;
+}
+/* ::State styles */
+/* ------------------------------------------------------------ */
+.is-hidden {
+  display: none;
+}
+
+.is-shown, .is-block {
+  display: block;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+/* ::Debugs and #grid by Jon Gibbins */
+/* ----------------------------------------------------------- */
+#grid {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#grid div.horiz {
+  height: 8px;
+  border-bottom: 1px solid #ddd;
+  margin: 0;
+  padding: 0;
+}
