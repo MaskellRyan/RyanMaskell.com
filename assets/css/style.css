@@ -229,12 +229,17 @@ footer {
   width: 100%;
   position: relative;
   overflow: hidden;
+  z-index: 0;
+  background-color: #a5a5a5;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
   -ms-transition: all 1s ease-in-out;
   -o-transition: all 1s ease-in-out;
   -transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+}
+footer:hover {
+  background-color: #585858;
 }
 footer:hover .bg-hover {
   opacity: 1;
@@ -243,7 +248,7 @@ footer .wrap {
   margin: 0 auto;
 }
 footer .bg-img {
-  z-index: -5;
+  z-index: -2;
   width: 1600px;
   height: 1200px;
   max-width: none;
@@ -256,7 +261,7 @@ footer .bg-hover {
   -o-transition: all 1s ease-in-out;
   -transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  z-index: -2;
+  z-index: -1;
   opacity: 0;
 }
 footer li {
@@ -286,6 +291,8 @@ cite, time {
   width: 150px;
   height: 175px;
   float: left;
+  background-image: url(../img/noartwork.jpg);
+  background-size: 100%;
 }
 .lastplay .lfm_art img {
   height: 100%;
@@ -306,6 +313,10 @@ cite, time {
 
 .row-fluid {
   margin-bottom: 35px;
+}
+
+.group img {
+  width: 137px;
 }
 
 .media > .media-body {
@@ -329,6 +340,22 @@ cite, time {
   .pull-right {
     clear: left;
     max-width: 40%;
+  }
+}
+
+#twitterfeed {
+  clear: left;
+}
+
+.avatar {
+  width: 135px;
+  padding-bottom: 18px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 40.625em) {
+  .avatar {
+    float: left;
   }
 }
 

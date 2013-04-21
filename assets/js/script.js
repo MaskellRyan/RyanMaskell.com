@@ -80,6 +80,12 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 		
 })(jQuery);
 
+$(document).ready(function () {
+  $('#ryan').plaxify({"xRange":40,"yRange":10});
+  $('#seattle').plaxify({"xRange":20,"yRange":0,"invert":true});
+  //$('#greeting').plaxify({"xRange":40,"yRange":10});
+  $.plax.enable()
+})
 
 $(document).ready(function() {
   
@@ -96,4 +102,15 @@ $(document).ready(function() {
 	});
 
 
+});
+
+
+$(document).ready(function() {
+  $("a.group").fancybox({
+    // 'nextEffect'  : 'fade',
+    // 'prevEffect'  : 'fade',
+    // 'overlayOpacity' :  0.8,
+    // 'overlayColor' : '#000000',
+    // 'arrows' : false,
+  });     
 });
