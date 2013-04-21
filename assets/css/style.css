@@ -228,7 +228,6 @@ h3.full-header {
 footer {
   width: 100%;
   position: relative;
-  max-height: 1200px;
   overflow: hidden;
   -webkit-transition: all 1s ease-in-out;
   -moz-transition: all 1s ease-in-out;
@@ -259,6 +258,21 @@ footer .bg-hover {
   transition: all 1s ease-in-out;
   z-index: -2;
   opacity: 0;
+}
+footer li {
+  list-style-type: none;
+}
+
+iframe.btn {
+  padding: 0;
+}
+
+cite, time {
+  display: none;
+}
+
+.jquery-ui-tumblr-rss-entry {
+  margin: 25px;
 }
 
 .lastplay {

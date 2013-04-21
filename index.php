@@ -18,10 +18,13 @@
   <link rel="stylesheet" href="assets/css/bootstrap.css">
      <link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">
        <link rel="stylesheet" href="assets/fonts/stylesheet.css">
+       <link rel="stylesheet" href="assets/css/jquery.fancybox-1.3.4.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
   <script src="assets/js/libs/modernizr-2.0.6.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="assets/js/plax.js"></script>
+<script src="assets/js/jquery.fancybox-1.3.4.pack.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function () {
@@ -30,6 +33,17 @@ $('#seattle').plaxify({"xRange":20,"yRange":0,"invert":true});
 //$('#greeting').plaxify({"xRange":40,"yRange":10});
 $.plax.enable()
 })
+</script>
+<script type="text/javascript">
+    $(function() {
+      $("a.group").fancybox({
+        'nextEffect'  : 'fade',
+        'prevEffect'  : 'fade',
+        'overlayOpacity' :  0.8,
+        'overlayColor' : '#000000',
+        'arrows' : false,
+      });     
+    });
 </script>
 </head>
 
@@ -89,16 +103,47 @@ $.plax.enable()
   <div class="row-fluid">
     <div class="span3">
     <h3>Facebook</h3>
-    <p>Facebook Plugin?</p> 
-    <h3>Tumblr</h3>
-    <p>Tumblr Plugin?</p> 
-    </div>
-    <div class="span8">
+    
+    <img class="fb-photo img-polaroid" src="https://graph.facebook.com/maskellryan/picture?type=large">
+    <form action="http://www.facebook.com/addfriend.php?id=maskellryan"><input type="hidden" name="id" value="100000296041161" /><input type="submit" value="Add me on Facebook" /></form>
     <h3>Twitter</h3>
     <p>Recent Tweets & Follow Button.</p>
     <div id="twitterfeed">
         <div id="tweets"></div>
+    </div>
+    <h3>Tumblr</h3>
+    <p>Tumblr Plugin?</p> 
+    <iframe class="btn" frameborder="0" border="0" scrolling="no" allowtransparency="true" height="25" width="115" src="http://platform.tumblr.com/v1/follow_button.html?button_type=2&tumblelog=passionatemeandering&color_scheme=light"></iframe>
         </div>
+    <div class="span8">
+      <h3>Instagram</h3>
+
+  <?php
+    // Supply a user id and an access token
+    $userid = "30961079";
+    $accessToken = "30961079.ab103e5.20ff5b5201fc4e3ba2d21c8c6b38eb3e";
+
+    // Gets our data
+    function fetchData($url){
+         $ch = curl_init();
+         curl_setopt($ch, CURLOPT_URL, $url);
+         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+         curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+         $result = curl_exec($ch);
+         curl_close($ch); 
+         return $result;
+    }
+
+    // Pulls and parses data.
+    $result = fetchData("https://api.instagram.com/v1/users/{$userid}/media/recent/?access_token={$accessToken}");
+    $result = json_decode($result);
+  ?>
+
+
+  <?php foreach ($result->data as $post): ?>
+    <!-- Renders images. @Options (thumbnail,low_resoulution, high_resolution) -->
+    <a class="group" rel="group1" href="<?= $post->images->standard_resolution->url ?>"><img src="<?= $post->images->thumbnail->url ?>"></a>
+  <?php endforeach ?>
     </div>
   </div>
   <div class="row-fluid">
@@ -127,11 +172,14 @@ $.plax.enable()
   <script src="assets/js/hashgrid.js"></script>
   <script src="assets/js/lastfm.js"></script>
   <script src="assets/js/jquery.tweetable.js"></script>
+  
+  <script language="javascript" type="text/javascript" src="assets/js/jquery.ui.tumblr.rss.js"></script>
+
   <script defer src="assets/js/script.js"></script>
 
   <script type="text/javascript">
   $(function(){
-    $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 1, replies: true, position: 'append'});
+    $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 3, replies: true, position: 'append'});
   });
 </script>
 
