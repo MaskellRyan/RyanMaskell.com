@@ -16,7 +16,7 @@
     $.fn.tweetable = function (options) {
         //specify the plugins defauls
         var defaults = {
-            limit: 10, 						//number of tweets to show
+            limit: 5, 						//number of tweets to show
             username: 'maskellryan', 	//@username tweets to display
             time: false, 					//display date
             replies: true,				//filter out @replys
@@ -50,7 +50,7 @@
                     } else {
                         $tweetList.append('<li class="tweet_content_' + i + '"><p class="tweet_link_' + i + '">' + item.text.replace(/#(.*?)(\s|$)/g, '<span class="hash">#$1 </span>').replace(/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig, '<a href="$&">$&</a> ').replace(/@(.*?)(\s|\(|\)|$)/g, '<a href="http://twitter.com/$1">@$1 </a>$2') + '</p></li>');
                     }
-                    //display the tiem of tweet if required
+                    //display the time of tweet if required
                     if (defaults.time == true) {
                     	for(var iterate=0; iterate<=12; iterate++) {
                     		if(shortMonths[iterate] == item.created_at.substr(4, 3)) {

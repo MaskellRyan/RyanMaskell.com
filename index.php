@@ -83,14 +83,14 @@
 
     <div class="row-fluid">
 
-      <div class="span4">
+      <div class="span4 clearfix">
 
       <h3>Facebook</h3>
       <a href="http://www.facebook.com/maskellryan"><img class="avatar img-polaroid" src="https://graph.facebook.com/maskellryan/picture?type=large"></a>
       <p>Have you met me? In person? Then chances are I'll add you back.</p>
       <form action="http://www.facebook.com/addfriend.php?id=maskellryan"><input type="hidden" name="id" value="100000296041161" /><input type="submit" value="Friend Me" /></form>
     </div>
-    <div class="span8">
+    <div class="span8 clearfix">
 
       <h3>Tumblr</h3>
       <a href="http://www.passionatemeandering.tumblr.com"><img class="avatar img-polaroid" src="http://api.tumblr.com/v2/blog/passionatemeandering.tumblr.com/avatar/512"></a>
@@ -179,7 +179,7 @@
 
   <script type="text/javascript">
   $(function(){
-    $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 10, replies: true, position: 'append'});
+    $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 4, replies: true, position: 'append'});
   });
 </script>
 

@@ -283,13 +283,14 @@ cite, time {
 .lastplay {
   float: left;
   margin: 6px;
+  max-width: 166px;
 }
 .lastplay .lfm_art {
   border: 5px white solid;
   border-bottom-width: 25px;
-  margin: 7px;
-  width: 150px;
-  height: 175px;
+  margin-bottom: 10px;
+  width: 165px;
+  height: 180px;
   float: left;
   background-image: url(../img/noartwork.jpg);
   background-size: 100%;
@@ -303,6 +304,19 @@ cite, time {
 }
 .lastplay:last-of-type {
   display: none;
+}
+
+.lfm_song {
+  font-size: 14px;
+}
+
+.lfm_artist {
+  margin-top: 10px;
+}
+
+.lfm_artist, .lfm_album {
+  font-size: 11px;
+  color: #dedede;
 }
 
 @media (min-width: 40.625em) {
@@ -346,6 +360,22 @@ cite, time {
 #twitterfeed {
   clear: left;
 }
+#twitterfeed small {
+  display: block;
+  font-size: 10px;
+  color: #dedede;
+}
+#twitterfeed li {
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 13px 0 13px 13px;
+  margin: 20px 0;
+  -webkit-box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+  -ms-box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+  -box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 44px 0 55px -60px rgba(0, 0, 0, 0.6);
+}
 
 .avatar {
   width: 135px;
@@ -376,7 +406,8 @@ body {
 }
 
 a {
-  color: white;
+  color: #cccccc;
+  padding-bottom: 1px;
   white-space: pre;
   white-space: pre-wrap;
   white-space: pre-line;
@@ -387,7 +418,9 @@ a {
   word-wrap: break-word;
 }
 a:hover, a:focus, a:active {
-  color: #cc2500;
+  color: white;
+  text-decoration: none;
+  border-bottom: 2px dotted rgba(204, 204, 204, 0.2);
 }
 
 /*********************

@@ -13,6 +13,8 @@ $tertiary							: #000000;
 $black								: #000000;
 $white								: #ffffff;
 
+$offwhite							: darken($white, 13%);
+
 // Assign colours to variable roles
 $base-color							: $primary;
 $heading-color						: $secondary;
@@ -21,8 +23,8 @@ $secondary-heading-color			: $tertiary;
 
 
 // Links
-$action								: $primary;
-$action-respond						: $secondary;
+$action								: darken($primary, 20%);
+$action-respond						: $primary;
 $secondary-action					: $action-respond;
 $secondary-action-respond			: $action;
 

@@ -184,12 +184,13 @@ cite, time {
 .lastplay {
 	float: left;
 	margin: 6px;
+	max-width: 166px;
 	.lfm_art {
 		border: 5px white solid;
 		border-bottom-width: 25px;
-		margin: 7px;
-		width: 150px;
-		height: 175px;
+		margin-bottom: 10px;
+		width: 165px;
+		height: 180px;
 		float: left;
 		background-image: url(../img/noartwork.jpg);
 		background-size: 100%;
@@ -204,6 +205,19 @@ cite, time {
 	&:last-of-type {
 		display: none;
 	}
+}
+
+.lfm_song {
+	font-size: 14px;
+}
+
+.lfm_artist {
+	margin-top: 10px;
+}
+
+.lfm_artist, .lfm_album {
+	font-size: 11px;
+	color: $offwhite;
 }
 
 .lastplay:nth-of-type(even) {
@@ -249,7 +263,17 @@ cite, time {
 
 #twitterfeed {
 	clear: left;
-
+	small {
+		display: block;
+		font-size: 10px;
+		color: $offwhite;
+	}
+	li {
+		border-left: 2px solid transparentize($black, .8);
+		padding: 13px 0 13px 13px;
+		margin: 20px 0;
+		@include box-shadow(inset 44px 0 55px -60px transparentize($black, .4));
+	}
 }
 
 .avatar {
@@ -282,9 +306,12 @@ body {
 
 a {
 	color: $action;
+	padding-bottom: 1px;
 	@include force-wrap;					// force text links to wrap
 	&:hover, &:focus, &:active {
-		color: $action-respond
+		color: $action-respond;
+		text-decoration: none;
+		border-bottom: 2px dotted transparentize($action, .8);
 	}
 }
 
