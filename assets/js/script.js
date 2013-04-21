@@ -80,3 +80,20 @@ window.log=function(){log.history=log.history||[];log.history.push(arguments);if
 		
 })(jQuery);
 
+
+$(document).ready(function() {
+  
+  // Good stuff
+	$('div#lastfm').lastFM({
+		username: 'maskellryan',
+		apikey: '4c2dd13c006e5835ebbbe342fe4c1ca2',
+		number: 6,
+		artSize: 'large',
+		onComplete: function(){
+			//Done
+			
+		}
+	});
+
+
+});

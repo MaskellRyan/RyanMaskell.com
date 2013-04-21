@@ -134,7 +134,7 @@ h3.full-header {
 footer {
 	width: 100%;
 	position: relative;
-	height: 850px;
+	max-height: 1200px;
 	overflow: hidden;
 	@include transition(all 1s ease-in-out);
 	//background-image: url(../../assets/img/chicago-predark.jpg);
@@ -163,6 +163,35 @@ footer {
 	}
 }
 
+.lastplay {
+	float: left;
+	margin: 6px;
+	.lfm_art {
+		border: 5px white solid;
+		border-bottom-width: 25px;
+		margin: 7px;
+		width: 150px;
+		height: 175px;
+		float: left;
+		img {
+			height: 100%;
+			width: 100%;
+		}
+	}
+	&:nth-of-type(even) {
+		display: none;
+	}
+	&:last-of-type {
+		display: none;
+	}
+}
+
+.lastplay:nth-of-type(even) {
+	@include breakpoint(tablet) {
+		display: block;
+	}
+}
+
 .row-fluid {
 	margin-bottom: 35px;
 }
@@ -173,6 +202,10 @@ footer {
 .media > .pull-right {
 	margin-top: -18px;
 	margin-left: 20px;
+}
+
+.img-polaroid {
+	padding-bottom: 30px;
 }
 
 .pull-right {

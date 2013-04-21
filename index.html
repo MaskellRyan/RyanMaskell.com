@@ -20,7 +20,7 @@
        <link rel="stylesheet" href="assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/libs/modernizr-2.0.6.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript" src="assets/js/plax.js"></script>
 
 <script type="text/javascript">
@@ -40,7 +40,7 @@ $.plax.enable()
   <img id="seattle" class="paraimg" src="assets/img/seattle.png" />
 <img id="ryan" class="paraimg" src="assets/img/Ryan.png" />
   <div id="greeting">
-    <h1>Greetings!</h1>
+    <h1>Salutations...</h1>
     <p>I'm Ryan, and this site is under construction.
          <br> <em>Come back later! Or email me: <a href="mailto:maskellryan@me.com">MaskellRyan@me.com</a></em>
     </p>
@@ -83,25 +83,36 @@ $.plax.enable()
 <footer>
   <img class="bg-img" src="assets/img/chicago-predark.jpg">
   <img class="bg-img bg-hover" src="assets/img/chicago-dark3.jpg">
-  <h3 class="full-header">Connect with me</h3>
+  <h3 class="full-header">Lets Socialize</h3>
 
 <div class="wrap">
   <div class="row-fluid">
     <div class="span3">
     <h3>Facebook</h3>
-    <p>Facebook Plugin?</p>  
+    <p>Facebook Plugin?</p> 
+    <h3>Tumblr</h3>
+    <p>Tumblr Plugin?</p> 
     </div>
-    <div class="span3">
+    <div class="span8">
     <h3>Twitter</h3>
     <p>Recent Tweets & Follow Button.</p>
+    <div id="twitterfeed">
+        <div id="tweets"></div>
+        </div>
     </div>
-    <div class="span3">
-    <h3>Tumblr</h3>
-    <p>Tumblr Plugin?</p>
+  </div>
+  <div class="row-fluid">
+    <div class="span12">
+    <h3>Music I'm Listening to</h3>
+    <p>Follow me on Last.FM to get a taste of my eclectic stylings.</p>
+    <div id="lastfm">
+      <dl class="lastplay">
+        <dt class="lfm_art"></dt>
+        <dd class="lfm_song"> </dd>
+        <dd class="lfm_artist"><i class="icon-user"></i> </dd>
+        <dd class="lfm_album"><i class="icon-picture"></i> </dd>
+      </dl>
     </div>
-    <div class="span3">
-    <h3>Last.Fm</h3>
-    <p>Recently played Tracks from Last.FM</p>
     </div>
   </div>
 </footer>
@@ -114,7 +125,15 @@ $.plax.enable()
   <script src="assets/js/bootstrap.js"></script>
   <script defer src="assets/js/plugins.js"></script>
   <script src="assets/js/hashgrid.js"></script>
+  <script src="assets/js/lastfm.js"></script>
+  <script src="assets/js/jquery.tweetable.js"></script>
   <script defer src="assets/js/script.js"></script>
+
+  <script type="text/javascript">
+  $(function(){
+    $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 1, replies: true, position: 'append'});
+  });
+</script>
 
   <script>
     window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
