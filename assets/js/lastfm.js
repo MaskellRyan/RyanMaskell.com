@@ -19,7 +19,7 @@
 			username: 'willblackmore',
 			apikey: '96e0589327a3f120074f74dbc8ec6443',
 			artSize: 'medium',
-			noart: 'images/noartwork.gif',
+			noart: 'assets/img/noartwork.jpg',
 			onComplete: function(){}
 		},
 		settings = $.extend({}, defaults, options);
@@ -58,7 +58,7 @@
 					$current.find('[class=lfm_song]').append(song);
 					$current.find('[class=lfm_artist]').append(artist);
 					$current.find('[class=lfm_album]').append(album);
-					$current.find('[class=lfm_art]').append("<img src='"+art+"' alt='Artwork for "+album+"'/>");
+					$current.find('[class=lfm_art]').append("<img src='"+art+"' alt=' "+album+"'/>");
 					$current.find('a').attr('href', url).attr('title', 'Listen to '+song+' on Last.FM').attr('target', '_blank');
 					
 					//callback

@@ -65,6 +65,15 @@
 	top: -10% !important;
 }
 
+#clouds {
+
+	width: 1200px;
+	@include breakpoint(tablet) {
+		width: 100%;
+
+	}
+}
+
 #parallax-frame {
   position: absolute;
   width: 100%;
@@ -151,8 +160,12 @@
 }
 
 h3.full-header {
-	font-size: 35px;
+	font-size: 25px;
 	padding: 20px;
+	@include breakpoint(desktop) {
+		font-size: 35px;
+		padding: 20px;
+	}
 	@include css-gradient(lighten($tertiary, 30%), lighten($tertiary, 50%));
 }
 
@@ -179,8 +192,14 @@ h3.full-header {
 	}
 	.bg-img {
 		z-index: -2;
-		width: 1600px;
-		height: 1200px;
+		@include breakpoint(tablet) {
+			width: 1600px;
+			height: 1200px;
+		}
+		@include breakpoint(desktop) {
+			width: 100%;
+			height: auto;
+		}
 		max-width: none;
 		position: absolute;
 	}
@@ -229,8 +248,8 @@ cite, time {
 			height: 180px;
 		}
 		float: left;
-		background-image: url(../img/noartwork.jpg);
-		background-size: 100%;
+		//background-image: url(../img/noartwork.jpg);
+		//background-size: 100%;
 		img {
 			height: 100%;
 			width: 100%;
@@ -287,7 +306,13 @@ cite, time {
 }
 .media > .pull-right {
 	margin-top: -18px;
-	margin-left: 30px;
+	margin-left: 0;
+	@include breakpoint(tablet) {
+		margin-left: 15px;
+	}
+	@include breakpoint(desktop) {
+		margin-left: 30px;
+	}
 }
 
 .img-polaroid {
@@ -349,6 +374,7 @@ cite, time {
 	//position: relative;
 	width: 75%;
 	margin: 50px auto;
+	max-width: 1100px;
 }
 
 footer {
@@ -374,7 +400,7 @@ a {
 	&:hover, &:focus, &:active {
 		color: $action-respond;
 		text-decoration: none;
-		
+		text-shadow: 0 1px 0 $black;
 	}
 }
 

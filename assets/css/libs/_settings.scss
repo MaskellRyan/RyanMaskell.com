@@ -24,7 +24,7 @@ $secondary-heading-color			: $tertiary;
 
 // Links
 $action								: darken($primary, 20%);
-$action-respond						: $primary;
+$action-respond						: lighten($secondary, 10%);
 $secondary-action					: $action-respond;
 $secondary-action-respond			: $action;
 
