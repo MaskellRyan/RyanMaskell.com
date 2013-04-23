@@ -227,6 +227,19 @@ cite, time {
 
 .group {
 	border-bottom-width: 0;
+	width: 22.5%;
+	min-width: 100px;
+	float: left;
+	display: block;
+	margin: 1%;
+	border: 3px solid transparentize($offwhite, .8);
+	&:hover {
+		border-color: $white;
+	}
+	img {
+		width: 100%;
+		margin-bottom: -4px;
+	}
 }
 
 .lastplay {
@@ -304,8 +317,8 @@ cite, time {
 	}
 }
 
-.group img {
-	width: 137px;
+.media {
+	overflow: visible;
 }
 
 .media > .media-body {
@@ -314,12 +327,15 @@ cite, time {
 .media > .pull-right {
 	margin-top: -18px;
 	margin-left: 0;
+	display: block;
+	position: relative;
 	@include breakpoint(tablet) {
 		margin-left: 15px;
 	}
 	@include breakpoint(desktop) {
 		margin-left: 30px;
 	}
+
 }
 
 .img-polaroid {
@@ -388,10 +404,23 @@ cite, time {
 	li {
 		list-style-type: none;
 		float: left;
-		width: 18%;
+		width: 18.4%;
 		margin: 1%;
+		position: relative;
 		a {
 			border-bottom-width: 0;
+			&:hover {
+				text-shadow: none;
+				.popup {
+					opacity: 1;
+				}
+			}
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
 	p {
@@ -402,6 +431,30 @@ cite, time {
 			display: block;
 		}
 	}
+	.dribbble {
+		margin-bottom: 10px;
+		display: block;
+		height: 100%;
+		border: 3px solid transparentize($offwhite, .8);
+		img {
+			margin-bottom: -7px;
+		}
+		&:hover {
+			border: 3px solid $white;
+		}
+	}
+}
+
+.popup {
+	opacity: 0;
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+	background-color: $white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: $black;
 }
 
 hr {

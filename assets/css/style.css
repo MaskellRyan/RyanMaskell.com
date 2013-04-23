@@ -338,6 +338,19 @@ cite, time {
 
 .group {
   border-bottom-width: 0;
+  width: 22.5%;
+  min-width: 100px;
+  float: left;
+  display: block;
+  margin: 1%;
+  border: 3px solid rgba(222, 222, 222, 0.2);
+}
+.group:hover {
+  border-color: white;
+}
+.group img {
+  width: 100%;
+  margin-bottom: -4px;
 }
 
 .lastplay {
@@ -395,8 +408,8 @@ cite, time {
   margin-bottom: 35px;
 }
 
-.group img {
-  width: 137px;
+.media {
+  overflow: visible;
 }
 
 .media > .media-body {
@@ -406,6 +419,8 @@ cite, time {
 .media > .pull-right {
   margin-top: -18px;
   margin-left: 0;
+  display: block;
+  position: relative;
 }
 @media (min-width: 40.625em) {
   .media > .pull-right {
@@ -487,11 +502,24 @@ cite, time {
 #shotsByPlayerId li {
   list-style-type: none;
   float: left;
-  width: 18%;
+  width: 18.4%;
   margin: 1%;
+  position: relative;
 }
 #shotsByPlayerId li a {
   border-bottom-width: 0;
+}
+#shotsByPlayerId li a:hover {
+  text-shadow: none;
+}
+#shotsByPlayerId li a:hover .popup {
+  opacity: 1;
+}
+#shotsByPlayerId li:first-of-type {
+  margin-left: 0;
+}
+#shotsByPlayerId li:last-of-type {
+  margin-right: 0;
 }
 #shotsByPlayerId p {
   font-size: 11px;
@@ -502,6 +530,30 @@ cite, time {
   #shotsByPlayerId p {
     display: block;
   }
+}
+#shotsByPlayerId .dribbble {
+  margin-bottom: 10px;
+  display: block;
+  height: 100%;
+  border: 3px solid rgba(222, 222, 222, 0.2);
+}
+#shotsByPlayerId .dribbble img {
+  margin-bottom: -7px;
+}
+#shotsByPlayerId .dribbble:hover {
+  border: 3px solid white;
+}
+
+.popup {
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: black;
 }
 
 hr {

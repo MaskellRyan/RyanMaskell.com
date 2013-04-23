@@ -107,7 +107,7 @@
       <h3>Facebook</h3>
       <a target="_blank" href="http://www.facebook.com/maskellryan"><img class="avatar img-polaroid" src="https://graph.facebook.com/maskellryan/picture?type=large"></a>
       <p>Have you met me? In person? Then chances are I'll add you back.</p>
-      <form action="http://www.facebook.com/addfriend.php?id=maskellryan"><input type="hidden" name="id" value="100000296041161" /><input type="submit" value="Friend Me" /></form>
+      <form action="http://www.facebook.com/addfriend.php?id=maskellryan"><input type="hidden" name="id" value="100000296041161" /><input class="btn" type="submit" value="Request Friend" /></form>
     </div>
     <div class="span8 clearfix">
 
@@ -294,7 +294,7 @@ $.jribbble.getShotsByPlayerId('maskellmedia', function (playerShots) {
     var html = [];
 
     $.each(playerShots.shots, function (i, shot) {
-        html.push('<li><a target="_blank" href="' + shot.url + '"><img class="img-polaroid" src="' + shot.image_teaser_url + '" ></a>');
+        html.push('<li><a class="dribbble" target="_blank" href="' + shot.url + '"><img src="' + shot.image_teaser_url + '" ><div class="popup">View on Dribbble</div></a>');
         html.push('<p>' + shot.title + '</p></li>');
         // html.push('<h5>by ' + shot.player.name + '</h5><a href="' + shot.url + '">');
         //html.push('alt="' + shot.title + '"></a>');
