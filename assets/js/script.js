@@ -112,5 +112,5 @@ $(document).ready(function() {
     // 'overlayOpacity' :  0.8,
     // 'overlayColor' : '#000000',
     // 'arrows' : false,
-  });     
+  }); 
 });

@@ -85,11 +85,12 @@
       </div>
     </div>
   </div>
-<!--   <div class="row-fluid">
-
+   <div class="row-fluid">
+    <h5><em>Recent work:</em></h5>
+    <hr>
     <ul id="shotsByPlayerId"></ul>
 
-  </div> -->
+  </div>
 </div>
 
 <div id="social">
@@ -170,7 +171,8 @@
       <div class="span12"> 
         <h3>The Music in my head</h3>
         <p>I listen to everything from String Quartets and poppy sing-alongs to Heavy Rap-Rock, but mainly alternative punk is my go to genre. My favorite band of all time is PANIC! at the Disco, although others that inspire and give me chills are My Chemical Romance, Fall Out Boy, Paramore, Sum 41, Hollywood Undead, and Daft Punk. Follow me on <a target="_blank" href="http://www.last.fm/user/maskellryan">Last.FM</a> to learn more about my eclectic taste in music.</p>
-        <p style="text-align:center;"> <em>Now playing:</em> </p>
+        <h5><em>Recently played:</em></h5>
+        <hr>
         <div id="lastfm" class="clearfix">
           <dl class="lastplay">
             <dt class="lfm_art"></dt>
@@ -284,26 +286,24 @@
   <script src="assets/js/hashgrid.js"></script>
   <script src="assets/js/lastfm.js"></script>
   <script src="assets/js/jquery.tweetable.js"></script>
-  <!-- <script src="assets/js/jquery.jribbble-1.0.1.js"></script> -->
+  <script src="assets/js/jquery.jribbble-1.0.1.js"></script>
   <script defer src="assets/js/script.js"></script>
-  <!--<script>
-      var callback = function (playerShots) {
-          var html = '';
+  <script>
 
-          document.querySelector('h2 b').textContent = playerShots.shots[0].player.name;
+$.jribbble.getShotsByPlayerId('maskellmedia', function (playerShots) {
+    var html = [];
 
-          playerShots.shots.forEach(function (shot) {
-              html += '<li><h3>' + shot.title + '</h3>';
-              html += '<a href="' + shot.url + '">';
-              html += '<img src="' + shot.image_url + '" ';
-              html += 'alt="' + shot.title + '"></a></li>';
-          });
+    $.each(playerShots.shots, function (i, shot) {
+        html.push('<li><a target="_blank" href="' + shot.url + '"><img class="img-polaroid" src="' + shot.image_teaser_url + '" ></a>');
+        html.push('<p>' + shot.title + '</p></li>');
+        // html.push('<h5>by ' + shot.player.name + '</h5><a href="' + shot.url + '">');
+        //html.push('alt="' + shot.title + '"></a>');
+    });
 
-          document.getElementById('shotsByPlayerId').innerHTML = html;
-      };
+    $('#shotsByPlayerId').html(html.join(''));
+}, {page: 1, per_page: 5});
 
-      jribbble.getShotsByPlayerId('maskellmedia', callback, {page: 1, per_page: 5});
-  </script>-->
+  </script>
   <script type="text/javascript">
     $(function(){
       $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 3, replies: true, position: 'append'});

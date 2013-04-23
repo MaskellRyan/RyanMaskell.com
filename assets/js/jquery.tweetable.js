@@ -16,10 +16,10 @@
     $.fn.tweetable = function (options) {
         //specify the plugins defauls
         var defaults = {
-            limit: 5, 						//number of tweets to show
+            limit: 4, 						//number of tweets to show
             username: 'maskellryan', 	//@username tweets to display
             time: false, 					//display date
-            replies: true,				//filter out @replys
+            replies: false,				//filter out @replys
             position: 'append'			//append position
         };
         //overwrite the defaults

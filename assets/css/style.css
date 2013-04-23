@@ -342,37 +342,34 @@ cite, time {
 
 .lastplay {
   float: left;
-  margin: 6px;
-  max-width: 145px;
+  margin: 1%;
 }
 @media (min-width: 60em) {
   .lastplay {
-    max-width: 166px;
+    width: 15%;
   }
 }
 .lastplay .lfm_art {
   border: 5px white solid;
   border-bottom-width: 25px;
   margin-bottom: 10px;
-  width: 145px;
-  height: 160px;
+  width: 100%;
   float: left;
-}
-@media (min-width: 60em) {
-  .lastplay .lfm_art {
-    width: 165px;
-    height: 180px;
-  }
 }
 .lastplay .lfm_art img {
   height: 100%;
   width: 100%;
+  margin-bottom: -3px;
 }
 .lastplay:nth-of-type(even) {
   display: none;
 }
 .lastplay:last-of-type {
   display: none;
+  margin-right: 0;
+}
+.lastplay:first-of-type {
+  margin-left: 0;
 }
 
 .lfm_song {
@@ -422,7 +419,7 @@ cite, time {
 }
 
 .img-polaroid {
-  padding-bottom: 30px;
+  padding-bottom: 10%;
 }
 
 .pull-right {
@@ -485,6 +482,31 @@ cite, time {
   width: 75%;
   margin: 50px auto;
   max-width: 1100px;
+}
+
+#shotsByPlayerId li {
+  list-style-type: none;
+  float: left;
+  width: 18%;
+  margin: 1%;
+}
+#shotsByPlayerId li a {
+  border-bottom-width: 0;
+}
+#shotsByPlayerId p {
+  font-size: 11px;
+  color: #dedede;
+  display: none;
+}
+@media (min-width: 40.625em) {
+  #shotsByPlayerId p {
+    display: block;
+  }
+}
+
+hr {
+  color: #dedede;
+  opacity: .5;
 }
 
 footer {
