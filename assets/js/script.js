@@ -93,7 +93,7 @@ $(document).ready(function() {
 	$('div#lastfm').lastFM({
 		username: 'maskellryan',
 		apikey: '4c2dd13c006e5835ebbbe342fe4c1ca2',
-		number: 6,
+		number: 5,
 		artSize: 'large',
 		onComplete: function(){
 			//Done

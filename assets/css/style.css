@@ -101,6 +101,50 @@ Be careful with these since they can
 really slow down your CSS. Don't overdue it.
 *********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
+@-moz-keyframes swing {
+  0% {
+    -moz-transform: rotate(3deg);
+  }
+
+  25% {
+    -moz-transform: rotate(-3deg);
+  }
+
+  50% {
+    -moz-transform: rotate(3deg);
+  }
+
+  75% {
+    -moz-transform: rotate(-3deg);
+  }
+
+  100% {
+    -moz-transform: rotate(3deg);
+  }
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(3deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-3deg);
+  }
+}
+
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 .clearfix, .container, section {
@@ -156,8 +200,8 @@ really slow down your CSS. Don't overdue it.
   height: auto;
   min-width: auto;
 }
-#parallax-frame #greeting {
-  position: absolute;
+#parallax-frame .greeting, #parallax-frame .email {
+  position: relative;
   margin: 0 0 0 46%;
   width: 350px;
   color: white;
@@ -169,18 +213,18 @@ really slow down your CSS. Don't overdue it.
   box-shadow: 0px 5px 2px -5px rgba(0, 0, 0, 0.22);
   background-color: rgba(0, 0, 0, 0.1);
 }
-#parallax-frame #greeting p {
+#parallax-frame .greeting p, #parallax-frame .email p {
   display: none;
 }
 @media (min-width: 40.625em) {
-  #parallax-frame #greeting {
+  #parallax-frame .greeting, #parallax-frame .email {
     display: block;
   }
-  #parallax-frame #greeting p {
+  #parallax-frame .greeting p, #parallax-frame .email p {
     display: block;
   }
 }
-#parallax-frame #greeting h1 {
+#parallax-frame .greeting h1, #parallax-frame .email h1 {
   padding: 10% 10px 18px;
   font-size: 25px;
   background-color: #cc2500;
@@ -193,22 +237,26 @@ really slow down your CSS. Don't overdue it.
   margin-bottom: 11px;
   border-bottom: solid 1px rgba(0, 0, 0, 0.2);
 }
-#parallax-frame #greeting h1 span {
+#parallax-frame .greeting h1 span, #parallax-frame .email h1 span {
   display: block;
   clear: left;
   font-size: 30px;
 }
 @media (min-width: 60em) {
-  #parallax-frame #greeting h1 {
+  #parallax-frame .greeting h1, #parallax-frame .email h1 {
     padding-top: 30%;
     font-size: 33px;
   }
-  #parallax-frame #greeting h1 span {
+  #parallax-frame .greeting h1 span, #parallax-frame .email h1 span {
     font-size: 45px;
   }
 }
-#parallax-frame #greeting p {
+#parallax-frame .greeting p, #parallax-frame .email p {
   padding: 0 10px;
+}
+#parallax-frame .email {
+  clear: left;
+  display: block;
 }
 
 #landing {
@@ -378,7 +426,6 @@ cite, time {
   display: none;
 }
 .lastplay:last-of-type {
-  display: none;
   margin-right: 0;
 }
 .lastplay:first-of-type {
@@ -406,6 +453,34 @@ cite, time {
 
 .row-fluid {
   margin-bottom: 35px;
+}
+
+.about .swing {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -moz-transform: scale(1) rotate(3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -webkit-transform: scale(1) rotate(3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -o-transform: scale(1) rotate(3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  -ms-transform: scale(1) rotate(3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+  transform: scale(1) rotate(3deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+}
+.about:hover .swing {
+  -webkit-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
+  -transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -moz-animation: 3s ease-in-out 0s normal none swing;
+  -moz-transform-origin: center top;
+  -moz-animation-duration: 6s;
+  -webkit-animation: swing 3s ease-in-out;
+  -webkit-transform-origin: top;
+  -webkit-animation-duration: 6s;
 }
 
 .media {
@@ -483,11 +558,6 @@ cite, time {
 .thumbsup {
   width: 270px;
   margin: 0 auto 43px;
-  -moz-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-  -webkit-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-  -o-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-  -ms-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-  transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
 }
 .thumbsup img {
   width: 100%;
@@ -595,6 +665,23 @@ a:hover, a:focus, a:active {
   text-shadow: 0 1px 0 black;
 }
 
+.btn-primary {
+  background-color: #801700;
+  background-image: -webkit-gradient(linear, top, bottom, from(#cc2500), to(#801700));
+  background-image: -webkit-linear-gradient(top, #cc2500, #801700);
+  background-image: -moz-linear-gradient(top, #cc2500, #801700);
+  background-image: -o-linear-gradient(top, #cc2500, #801700);
+  background-image: linear-gradient(to bottom, #cc2500, #801700);
+  background-color: #801700;
+}
+.btn-primary:hover {
+  background-color: #801700;
+}
+
+.btn:hover {
+  text-shadow: none;
+}
+
 /*********************
 BORDER RADIUS
 *********************/
@@ -628,6 +715,50 @@ Be careful with these since they can
 really slow down your CSS. Don't overdue it.
 *********************/
 /* @include css-gradient(#dfdfdf,#f8f8f8); */
+@-moz-keyframes swing {
+  0% {
+    -moz-transform: rotate(3deg);
+  }
+
+  25% {
+    -moz-transform: rotate(-3deg);
+  }
+
+  50% {
+    -moz-transform: rotate(3deg);
+  }
+
+  75% {
+    -moz-transform: rotate(-3deg);
+  }
+
+  100% {
+    -moz-transform: rotate(3deg);
+  }
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  25% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(3deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(-3deg);
+  }
+}
+
 h1 {
   font-size: 2.25em;
   line-height: 1.1111111em;
@@ -912,6 +1043,10 @@ ul {
 
 #contact {
   margin-top: 45px;
+}
+
+.span4 img {
+  margin-bottom: -15px;
 }
 
 @media (min-width: 60em) {

@@ -85,8 +85,8 @@
     height: auto;
     min-width: auto;
   }
-  #greeting {
-  	position: absolute;
+  .greeting {
+  	position: relative;
   	margin: 0 0 0 46%;
   	width: 350px;
   	//top: 20%;
@@ -126,6 +126,11 @@
   		padding: 0 10px;
   	}
   }
+  .email {
+	@extend .greeting;
+ 	clear: left;
+ 	display: block;
+	}
 }
 
 #landing {
@@ -275,7 +280,6 @@ cite, time {
 		display: none;
 	}
 	&:last-of-type {
-		display: none;
 		margin-right: 0;
 	}
 	&:first-of-type {
@@ -317,6 +321,18 @@ cite, time {
 	}
 }
 
+.about {
+	.swing {
+		@include tilt;
+		//@include transition(all 5s ease-in-out);
+	}
+	&:hover {
+		.swing {
+			@include swing;
+		}
+	}
+}
+
 .media {
 	overflow: visible;
 }
@@ -340,6 +356,7 @@ cite, time {
 
 .img-polaroid {
 	padding-bottom: 10%;
+	//@include tilt;
 }
 
 .pull-right {
@@ -382,11 +399,7 @@ cite, time {
 .thumbsup {
 	width: 270px;
 	margin: 0 auto 43px;
-	-moz-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-		-webkit-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-        -o-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-        -ms-transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
-        transform: scale(1) rotate(4deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+	//@include tilt;
 	img {
 		width: 100%;
 	}
@@ -486,6 +499,20 @@ a {
 		color: $action-respond;
 		text-decoration: none;
 		text-shadow: 0 1px 0 $black;
+	}
+}
+
+.btn-primary {
+	@include css-gradient($from: $secondary, $to: darken($secondary, 15%));
+	background-color: darken($secondary, 15%);
+	&:hover {
+		background-color: darken($secondary, 15%);
+	}
+}
+
+.btn {
+	&:hover {
+		text-shadow: none;
 	}
 }
 
@@ -638,6 +665,13 @@ ul 						{ @include unordered-inside }
 
 #contact {
 	margin-top: 45px;
+}
+
+.span4 {
+	img {
+		//@include tilt;
+		margin-bottom: -15px;
+	}
 }
 
 #contact-form {

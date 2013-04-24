@@ -42,30 +42,34 @@
     <img id="clouds" class="paraimg" src="assets/img/clouds.png" />
     <img id="seattle" class="paraimg" src="assets/img/seattle.png" />
     <img id="ryan" class="paraimg" src="assets/img/Ryan.png" />
-    <div id="greeting">
+    <div class="greeting">
       <h1>Hello! I'm <span>Ryan Maskell</span></h1>
       <p>Welcome to my online presence, here you can learn anything about me and connect.
       </p>
-      <p><em>If you just want to get ahold of me, send me an email: <a href="mailto:maskellryan@me.com">MaskellRyan@me.com</a></em>
+      <p><em>If you just want to get ahold of me:</em>
+      <hr>
       </p>
+    </div>
+    <div class="email">
+     <a href="mailto:maskellryan@me.com">Email MaskellRyan@me.com</a>
     </div>
   </div>
 </div>
 <h1 class="full-header">Three things about me</h1>
-<div class="wrap">
+<div class="wrap about">
   <div class="row-fluid">
     <div class="span4">
-      <img class="img-polaroid" src="assets/img/vendetta.jpg" />
+      <img class="img-polaroid swing" src="assets/img/vendetta.jpg" />
       <h2>Enthusiastic</h2>
       <p>I have an intesnse passion for learning new things, though my topics of interest can sometimes be narrow- - I have a wide apreciation for technology and the arts. I am always playing with a new online service or mobile app, and am constantly looking at inpiring works of art. I love words, poetry, and literature. I become engrossed in books, subjects, and science.</p>
     </div>
     <div class="span4">
-      <img class="img-polaroid" src="assets/img/spirited.jpg" />
+      <img class="img-polaroid swing" src="assets/img/spirited.jpg" />
       <h2>Spirited</h2>
       <p>I am my own person. That is unquestionable. I stay true to who I want to be and what I value. I am fun-loving, optimistic, and energetic. I like to have a good time even whilst doing the most mundane things, because I beleive life's greatest treasures lie in the little things. I dance badly, sing loudly, and can be an obnoxious goofball. I love life, and I get out of bed most mornings with both feet springing with energy and ambition.</p>
     </div>
     <div class="span4">
-      <img class="img-polaroid" src="assets/img/summon.jpg" />
+      <img class="img-polaroid swing" src="assets/img/summon.jpg" />
       <h2>Designer</h2>
       <p>When I was young I never thought I was creative, but now after years of being trained, tested, and pushed to my limits. I have come out the other side a Designer. My motiviation to learn and strive to be the best in my feild has caught some recognition too; I have won awards in various design diciplines on the local, state, and national levels of competiton. My personal design brand is called MaskellMedia.</p>
     </div>
@@ -102,14 +106,14 @@
 
     <div class="row-fluid">
 
-      <div class="span4 clearfix">
+      <div class="span4">
 
       <h3>Facebook</h3>
       <a target="_blank" href="http://www.facebook.com/maskellryan"><img class="avatar img-polaroid" src="https://graph.facebook.com/maskellryan/picture?type=large"></a>
       <p>Have you met me? In person? Then chances are I'll add you back.</p>
       <form action="http://www.facebook.com/addfriend.php?id=maskellryan"><input type="hidden" name="id" value="100000296041161" /><input class="btn" type="submit" value="Request Friend" /></form>
     </div>
-    <div class="span8 clearfix">
+    <div class="span8">
 
       <h3>Tumblr</h3>
       <a target="_blank" href="http://www.passionatemeandering.tumblr.com"><img class="avatar img-polaroid" src="http://api.tumblr.com/v2/blog/passionatemeandering.tumblr.com/avatar/512"></a>
@@ -154,7 +158,7 @@
           }
 
           // Pulls and parses data.
-          $result = fetchData("https://api.instagram.com/v1/users/{$userid}/media/recent/?access_token={$accessToken}");
+          $result = fetchData("https://api.instagram.com/v1/users/{$userid}/media/recent/?access_token={$accessToken}&count=12");
           $result = json_decode($result);
         ?>
 
@@ -173,7 +177,7 @@
         <p>I listen to everything from String Quartets and poppy sing-alongs to Heavy Rap-Rock, but mainly alternative punk is my go to genre. My favorite band of all time is PANIC! at the Disco, although others that inspire and give me chills are My Chemical Romance, Fall Out Boy, Paramore, Sum 41, Hollywood Undead, and Daft Punk. Follow me on <a target="_blank" href="http://www.last.fm/user/maskellryan">Last.FM</a> to learn more about my eclectic taste in music.</p>
         <h5><em>Recently played:</em></h5>
         <hr>
-        <div id="lastfm" class="clearfix">
+        <div id="lastfm">
           <dl class="lastplay">
             <dt class="lfm_art"></dt>
             <dd class="lfm_song"> </dd>
@@ -306,7 +310,7 @@ $.jribbble.getShotsByPlayerId('maskellmedia', function (playerShots) {
   </script>
   <script type="text/javascript">
     $(function(){
-      $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 3, replies: true, position: 'append'});
+      $('#tweets').tweetable({username: 'MaskellRyan', time: true, limit: 3, replies: false, position: 'append'});
     });
   </script>
 
