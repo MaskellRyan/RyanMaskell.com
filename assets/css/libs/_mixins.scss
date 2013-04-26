@@ -180,9 +180,9 @@ really slow down your CSS. Don't overdue it.
     -moz-animation: 3s ease-in-out 0s normal none swing;
     -moz-transform-origin: center top;
     -moz-animation-duration: 6s;
-    -webkit-animation:swing 3s ease-in-out;
-    -webkit-transform-origin:top;
-    -webkit-animation-duration: 6s;
+    // -webkit-animation:swing 3s ease-in-out;
+    // -webkit-transform-origin:top;
+    // -webkit-animation-duration: 6s;
 }
 
 @-moz-keyframes swing{
@@ -192,10 +192,10 @@ really slow down your CSS. Don't overdue it.
     75%{-moz-transform:rotate(-3deg)}
     100%{-moz-transform:rotate(3deg)}
 }
-@-webkit-keyframes swing{
-    0%{-webkit-transform:rotate(-3deg)}
-    25%{-webkit-transform:rotate(-3deg)}
-    50%{-webkit-transform:rotate(3deg)}
-    75%{-webkit-transform:rotate(-3deg)}
-    100%{-webkit-transform:rotate(-3deg)}
-}
+// @-webkit-keyframes swing{
+//     0%{-webkit-transform:rotate(3deg)}
+//     25%{-webkit-transform:rotate(-3deg)}
+//     50%{-webkit-transform:rotate(3deg)}
+//     75%{-webkit-transform:rotate(-3deg)}
+//     100%{-webkit-transform:rotate(3deg)}
+// }

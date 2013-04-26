@@ -130,6 +130,24 @@
 	@extend .greeting;
  	clear: left;
  	display: block;
+ 	text-align: center;
+ 	@include transition(all .3s ease-in-out);
+ 	a {
+ 		padding: 10px;
+ 		display: block;
+ 		width: 100%;
+ 		height: 100%;
+ 		color: $white;
+ 		border-bottom-width: 0;
+ 	}
+ 	&:hover {
+ 		//color: lighten($secondary, 10%);
+ 		background-color: transparentize($black, .5);
+ 	}
+ 	margin-top: -15px;
+	}
+	hr {
+		margin: 0;
 	}
 }
 

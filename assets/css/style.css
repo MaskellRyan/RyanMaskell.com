@@ -123,28 +123,6 @@ really slow down your CSS. Don't overdue it.
   }
 }
 
-@-webkit-keyframes swing {
-  0% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  25% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  50% {
-    -webkit-transform: rotate(3deg);
-  }
-
-  75% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(-3deg);
-  }
-}
-
 /* ::Clearfixs and extends. Use which suits best */
 /* ----------------------------------------------------------- */
 .clearfix, .container, section {
@@ -257,6 +235,28 @@ really slow down your CSS. Don't overdue it.
 #parallax-frame .email {
   clear: left;
   display: block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-top: -15px;
+}
+#parallax-frame .email a {
+  padding: 10px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  border-bottom-width: 0;
+}
+#parallax-frame .email:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#parallax-frame hr {
+  margin: 0;
 }
 
 #landing {
@@ -478,9 +478,6 @@ cite, time {
   -moz-animation: 3s ease-in-out 0s normal none swing;
   -moz-transform-origin: center top;
   -moz-animation-duration: 6s;
-  -webkit-animation: swing 3s ease-in-out;
-  -webkit-transform-origin: top;
-  -webkit-animation-duration: 6s;
 }
 
 .media {
@@ -734,28 +731,6 @@ really slow down your CSS. Don't overdue it.
 
   100% {
     -moz-transform: rotate(3deg);
-  }
-}
-
-@-webkit-keyframes swing {
-  0% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  25% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  50% {
-    -webkit-transform: rotate(3deg);
-  }
-
-  75% {
-    -webkit-transform: rotate(-3deg);
-  }
-
-  100% {
-    -webkit-transform: rotate(-3deg);
   }
 }
 
