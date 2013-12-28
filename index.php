@@ -75,17 +75,17 @@
     <div class="span4">
       <img class="img-polaroid swing" src="assets/img/vendetta.jpg" />
       <h2>Enthusiastic</h2>
-      <p>I have an intesnse passion for learning new things, though my topics of interest can sometimes be narrow- - I have a wide apreciation for technology and the arts. I am always playing with a new online service or mobile app, and am constantly looking at inpiring works of art. I love words, poetry, and literature. I become engrossed in books, subjects, and science.</p>
+      <p>I have an intense passion for learning new things and a vast appreciation for technology, the arts, and creativity. You can always find me playing with a new online service or mobile app... then immediately raving about it to anyone who will listen.</p>
     </div>
     <div class="span4">
       <img class="img-polaroid swing" src="assets/img/spirited.jpg" />
       <h2>Spirited</h2>
-      <p>I am my own person. That is unquestionable. I stay true to who I want to be and what I value. I am fun-loving, optimistic, and energetic. I like to have a good time even whilst doing the most mundane things, because I beleive life's greatest treasures lie in the little things. I dance badly, sing loudly, and can be an obnoxious goofball. I love life, and I get out of bed most mornings with both feet springing with energy and ambition.</p>
+      <p>I am fun-loving, optimistic, and energetic. I like to have a good time even whilst doing the most mundane things, because I believe life's greatest treasures lie in the little things.</p>
     </div>
     <div class="span4">
       <img class="img-polaroid swing" src="assets/img/summon.jpg" />
       <h2>Designer</h2>
-      <p>When I was young I never thought I was creative, but now after years of being trained, tested, and pushed to my limits. I have come out the other side a Designer. My motiviation to learn and strive to be the best in my feild has caught some recognition too; I have won awards in various design diciplines on the local, state, and national levels of competiton. My personal design brand is called MaskellMedia.</p>
+      <p>My motivation to learn and strive to be the best in my field has caught some recognition, both near and far. I have won awards in various design disciplines on the local, state, and national levels of competition. I accredit it to being pushed to my limits by great people.</p>
     </div>
   </div>
   <div class="row-fluid">
@@ -139,7 +139,7 @@
     <div class="span4">
 
       <h3>Twitter</h3>
-      <a target="_blank" href="http://www.twitter.com/maskellryan"><img class="avatar img-polaroid" src="https://api.twitter.com/1/users/profile_image/maskellryan?size=original"></a>
+      <a target="_blank" href="http://www.twitter.com/maskellryan"><img class="avatar img-polaroid" src="https://pbs.twimg.com/profile_images/378800000402079557/485152da381e7e60efb4474938569279.png"></a>
 
       <p>I tweet a lot of random stuff, personal life things, & some design related tweets too.</p>
 
